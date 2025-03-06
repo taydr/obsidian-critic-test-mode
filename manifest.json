@@ -4,8 +4,7 @@
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
 	"description": "Adds support for CriticMarkup syntax with visual highlighting for additions, deletions, and comments.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"author": "Tay",
+	"authorUrl": "https://github.com/tay",
 	"isDesktopOnly": false
 }
