@@ -1,14 +1,25 @@
 #!/bin/bash
 
-# Define the target directory
-TARGET_DIR="/Users/tay/Library/Mobile Documents/iCloud~md~obsidian/Documents/tay/.obsidian/plugins/obsidian-critic-test-mode"
+# Load environment variables from .env file
+if [ -f .env ]; then
+    source .env
+else
+    echo "Error: .env file not found"
+    exit 1
+fi
+
+# Check if OBSIDIAN_VAULT_PATH is set
+if [ -z "$OBSIDIAN_VAULT_PATH" ]; then
+    echo "Error: OBSIDIAN_VAULT_PATH is not set in .env file"
+    exit 1
+fi
 
 # Create the target directory if it doesn't exist
-mkdir -p "$TARGET_DIR"
+mkdir -p "$OBSIDIAN_VAULT_PATH"
 
 # Copy the files
-cp main.js "$TARGET_DIR/"
-cp styles.css "$TARGET_DIR/"
-cp manifest.json "$TARGET_DIR/"
+cp main.js "$OBSIDIAN_VAULT_PATH/"
+cp styles.css "$OBSIDIAN_VAULT_PATH/"
+cp manifest.json "$OBSIDIAN_VAULT_PATH/"
 
-echo "Files copied successfully to $TARGET_DIR" 
+echo "Files copied successfully to $OBSIDIAN_VAULT_PATH" 
